@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+//accede a los datos de persona interface
 //antes de esto falta una capa para consultar los datos (InMemory)
 export class PeopleService {
 
@@ -24,7 +25,7 @@ export class PeopleService {
       return this.dataSvc.delete(id)
     }
 
-    getAll():Observable<Person|null>{
+    getAll():Observable<Person[]>{
       return this.dataSvc.request()
     }
 
