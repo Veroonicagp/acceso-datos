@@ -6,11 +6,17 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class DataInMemory implements DataService<Person> {
+//no es especifco para persona esta hecho para cualquier tipo de dato por ello el uso de data o records
+// Mirar lo generico de las paginas y en esta <T>
+//implementar un (_: son privadas) behaviar subject , observable($)
+//
+export class DataInMemory<T> implements DataService {
 
-  constructor() { }
-  create(value: Person): Observable<Person> {
-    throw new Error('Method not implemented.');
+  constructor(
+    //super y sonsole.log
+  ) { }
+  create(value: Person): Observable<T> {
+    // [... mas datso introducidos realiza una copia (.)];
   }
   request(): Observable<Person> {
     throw new Error('Method not implemented.');

@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 export class PeopleService {
 
   constructor(
-    private dataSvc:DataService<Person>) { }
+    private dataSvc:DataService) { }
 
     addPerson(person:Person):Observable<Person>{
       return this.dataSvc.create(person)
