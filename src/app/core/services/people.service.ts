@@ -11,7 +11,9 @@ import { Observable } from 'rxjs';
 export class PeopleService {
 
   constructor(
-    private dataSvc:DataService) { }
+    private dataSvc:DataService<Person>) {
+
+     }
 
     addPerson(person:Person):Observable<Person>{
       return this.dataSvc.create(person)
@@ -26,7 +28,7 @@ export class PeopleService {
     }
 
     getAll():Observable<Person[]>{
-      return this.dataSvc.request()
+      return this.dataSvc.requestAll()
     }
 
     getPerson(id:string):Observable<Person|null>{
